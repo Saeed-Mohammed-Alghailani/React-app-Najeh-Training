@@ -1,0 +1,138 @@
+.carousel-item div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: RGBA(var(--bs-dark-rgb),var(--bs-bg-opacity,1))!important;
+  }
+  .carousel-item  {
+    margin-top: 70px !important;
+
+}
+
+  .first{
+    background-color: #CDD7D6;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 0;
+  }
+  .first h3{
+    
+  }
+
+  .second{
+    background-color: #CDD7D6;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 39px;
+  }
+
+
+  .insecond{
+    height: 300px;
+    border: #A03D40 2px solid;
+    margin: auto;
+    width: 300px;
+    margin-bottom: 39px;
+  }
+  .insecond img{
+    width: 297px;
+    height: 297px;
+  }
+
+  .first2{
+    background-color: #A03D40;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 0;
+  }
+  .first2 h3{
+    color: #FFFFFF;
+  }
+
+  .third{
+    background-color: #A03D40;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  .inthird{
+    height: 300px;
+    border: #CDD7D6 2px solid;
+    margin: 39px;
+    width: 300px;
+  }
+  .inthird img{
+    width: 297px;
+    height: 297px;
+  }
+
+.showproduct{
+  width: 300px !important;
+}
+
+.productpage{
+background-color: #CDD7D6 ;
+  padding-bottom: 100px;
+}
+
+.bgcolor{
+
+  background-color: #CDD7D6 ;
+}
+
+.outerdiv{
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerdiv{
+
+
+  border-radius: 5px;
+  background-color: #8c8c8c;
+  height: 500px;
+  width: 250px;
+  margin: auto;
+}
+
+.carddet{
+color: #FFFFFF;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+.price{
+  padding-left: 20px !important;
+  font-weight: bold !important;
+}
+.buy{
+  border-radius: 10px;
+  margin-top: 15px !important;
+  margin-left: 20px !important;
+  background-color: rgb(13, 13, 70);
+  font-weight: bold;
+  color: #CDD7D6;
+}
+.select{
+
+margin-top: 72px !important;
+background-color: #CDD7D6;
+}
+
+.divv{
+  margin-bottom: 50px !important;
+}
+  .colors{
+color: #233D4D;
+color: #FE7F2D;
+color: #A03D40;
+color: #CDD7D6;
+color: #FFFFFF;
+
+
+  }

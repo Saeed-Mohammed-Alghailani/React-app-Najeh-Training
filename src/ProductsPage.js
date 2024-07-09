@@ -84,7 +84,7 @@ function ProductsPage() {
                 />
                 <h4 class="carddet">Movie Name: {p.Name}</h4>
                 <p class="carddet">Movie Description: {p.Description}</p>
-                <small class="text-body-secondary price">Ticket Price: ${p.Price}</small>
+                <small class="text-body-secondary price">Ticket Price: {p.Price} OMR </small>
                 <button class="buy"> Buy Ticket Now</button>
              </div>
 

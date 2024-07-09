@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Table from "react-bootstrap/Table";
+import Logout from "./logout";
 
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   // const urlParams = new URLSearchParams(window.location.search);
   // const username = urlParams.get("name");
-
+   const checklogin = sessionStorage.getItem("email")
+   if(!checklogin){
+    window.location= "/"
+   }
   const fetchProducts = () => {
     axios
       .get("https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products")
@@ -52,6 +55,9 @@ function ProductsPage() {
           <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
         </ul>
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2"><a><Logout/></a></button>
+</div>
 
       </div>
     </div>

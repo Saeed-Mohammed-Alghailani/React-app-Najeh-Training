@@ -1,12 +1,14 @@
 import React from "react"
 import Carousel from 'react-bootstrap/Carousel';
 import Header from "./Header";
+import Swal from "sweetalert2";
 
 
 
 
 const Home = () => {
-
+  Swal.fire("This app could be improved more but the goal out of it has been achieved successfully enjoy browsing it,sorry this alert will appear in refresh of the home page or after redirecting to it , try admin email: admin@gmail.com pass: 123 to add and modify or delete items, regestier user and login to see the added,deleted or modified items, Big Thanks <3");
+  
     return(
 
         <div>

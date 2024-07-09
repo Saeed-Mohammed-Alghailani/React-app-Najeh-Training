@@ -88,7 +88,7 @@ function AddProduct({ onCreatedProduct }) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button className="addproduct" variant="primary" onClick={handleShow}>
           Add Product
         </Button>
   
@@ -120,7 +120,6 @@ function AddProduct({ onCreatedProduct }) {
                   required
                   type="text"
                   placeholder="product description"
-                  autoFocus
                   onChange={(e) => {
                     setDescription(e.target.value);
                   }}
@@ -137,7 +136,6 @@ function AddProduct({ onCreatedProduct }) {
                   required
                   type="text"
                   placeholder="Enter a Price"
-                  autoFocus
                   onChange={(e) => {
                     setPrice(e.target.value);
                   }}

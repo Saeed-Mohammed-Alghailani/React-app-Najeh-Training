@@ -33,11 +33,14 @@ function Login() {
         alert("Welcome, "+ response.data[0].Name)
         handleClose();
         if(email === "admin@gmail.com" && password === "123"){
+          sessionStorage.setItem("email","admin@gmail.com")
           window.location = '/adminpage' //  response.data[0].Name
           //setUser([...user, response.data]);  // mapping
           setValidated(false); // Reset validated state on close
         }else{
+          sessionStorage.setItem("email",email)
           window.location = '/productspage'
+
         }
      
       } catch (error) {
@@ -101,7 +104,6 @@ function Login() {
                   required
                   type="password"
                   placeholder="Enter Password"
-                  autoFocus
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}

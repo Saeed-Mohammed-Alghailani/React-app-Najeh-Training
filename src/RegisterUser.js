@@ -101,7 +101,6 @@ function RegisterUser({ onRegisterdedUser }) {
                 required
                 type="email"
                 placeholder="name@example.com"
-                autoFocus
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -118,7 +117,6 @@ function RegisterUser({ onRegisterdedUser }) {
                 required
                 type="password"
                 placeholder="Enter Password"
-                autoFocus
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -136,7 +134,6 @@ function RegisterUser({ onRegisterdedUser }) {
                 required
                 type="password"
                 placeholder="Confirm Password"
-                autoFocus
                 value={confirm}
                 isInvalid={isValid}
                 onBlur={() => checkMatch()}

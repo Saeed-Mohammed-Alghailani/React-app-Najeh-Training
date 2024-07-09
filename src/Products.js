@@ -6,12 +6,16 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import AddProduct from "./AddProduct";
 import swal from "sweetalert";
+import Logout from "./logout";
 
 function Products() {
   const [products, setProducts] = useState([]);
   // const urlParams = new URLSearchParams(window.location.search);
   // const username = urlParams.get("name");
-
+  const checklogin = sessionStorage.getItem("email")
+  if(!checklogin){
+   window.location= "/"
+  }
   const fetchProducts = () => {
     axios
       .get("https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products")
@@ -181,72 +185,82 @@ function Products() {
   return (
     <>
 
-<div class="divv"></div>
+
+<header class="p-3 text-bg-dark fixed-top">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2"><a><Logout/></a></button>
+</div>
+
+      </div>
+    </div>
+  </header>
+  <div class="divv"></div>
+
+      <div class ="container">
       <AddProduct onCreatedProduct={fetchProducts} />
 
-      <select
-        onChange={(e) => {
-          fetchProductsByCategory(e.target.value);
-        }}
-      >
-        <option value="0">All Categories</option>
-        <option value="1">Comedy</option>
-        <option value="2">Action</option>
-        <option value="3">Horror</option>
-      </select>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price (OMR)</th>
-            <th>Image</th>
-            <th>Category ID</th>
-            <th><i className="bi bi-pencil-square"> </i></th>
-            <th><i className="bi bi-trash"> </i></th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr>
-              <td> {p.Id} </td>
-              <td> {p.Name} </td>
-              <td> {p.Description} </td>
-              <td> {p.Price} </td>
-              <td>
-                <img
-                  src={`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads/` + p.Image}
-                  alt={p.Image}
-                  width="100"
-                  height="100"
-                />
-              </td>
-              <td> {p.CategoryId} </td>
-              <td>
-                {" "}
-                <a
+<select class="form-select "
+  onChange={(e) => {
+    fetchProductsByCategory(e.target.value);
+  }}
+>
+  <option value="0">All Categories</option>
+  <option value="1">Comedy</option>
+  <option value="2">Action</option>
+  <option value="3">Horror</option>
+</select>
+
+<div class="productpage">
+
+<div class="outerdiv">
+  {products.map((p) => (
+
+     <div class="innerdiv">
+                      <img
+          src={`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads/` + p.Image}
+          alt={p.Image}
+          width="250px"
+          height="300px"
+        />
+        <h4 class="carddet">Movie Name: {p.Name}</h4>
+        <p class="carddet">Movie Description: {p.Description}</p>
+        <small class="text-body-secondary price">Ticket Price: {p.Price} OMR </small>
+        <button className="buttons">
+          <a
                   class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                   href="#"
                   onClick={() => getProductEdit(p.Id)}
                 >
                   Edit <i className="bi bi-pencil-square"> </i>
-                </a>{" "}
-              </td>
-              <td>
-                {" "}
-                <a
+                </a></button>
+                <button><a
                   className="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                   href="#"
                   onClick={() => deleteProduct(p.Id)}
                 >
                   Delete <i className="bi bi-trash"> </i>
-                </a>{" "}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+                </a></button>
+     </div>
+
+  ))}
+
+
+</div>
+
+</div>
+
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -277,7 +291,6 @@ function Products() {
                 required
                 type="text"
                 placeholder="product description"
-                autoFocus
                 value={description}
                 onChange={(e) => {
                   setDescription(e.target.value);
@@ -295,7 +308,6 @@ function Products() {
                 required
                 type="text"
                 placeholder="Enter a Price"
-                autoFocus
                 value={price}
                 onChange={(e) => {
                   setPrice(e.target.value);

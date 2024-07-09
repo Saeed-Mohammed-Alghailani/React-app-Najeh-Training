@@ -10,7 +10,7 @@ function ProductsPage() {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3004/api/products")
+      .get("https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products")
       .then((response) => {
         setProducts(response.data);
       })
@@ -24,7 +24,7 @@ function ProductsPage() {
       fetchProducts();
     } else {
       axios
-        .get(`http://localhost:3004/api/products/${id}`)
+        .get(`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products/${id}`)
         .then((response) => {
           setProducts(response.data);
         })
@@ -77,7 +77,7 @@ function ProductsPage() {
 
              <div class="innerdiv">
                               <img
-                  src={`http://localhost:3004/uploads/` + p.Image}
+                  src={`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads/` + p.Image}
                   alt={p.Image}
                   width="250px"
                   height="300px"
@@ -94,37 +94,7 @@ function ProductsPage() {
         </div>
 
     </div>
-      {/* <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price (OMR)</th>
-            <th>Image</th>
-            <th>Category ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr>
-              <td> {p.Id} </td>
-              <td> {p.Name} </td>
-              <td> {p.Description} </td>
-              <td> {p.Price} </td>
-              <td>
-                <img
-                  src={`http://localhost:3004/uploads/` + p.Image}
-                  alt={p.Image}
-                  width="100"
-                  height="100"
-                />
-              </td>
-              <td> {p.CategoryId} </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table> */}
+
 
     </div>
   );

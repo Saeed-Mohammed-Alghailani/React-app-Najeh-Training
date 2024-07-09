@@ -14,7 +14,7 @@ function Products() {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3004/api/products")
+      .get("https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products")
       .then((response) => {
         setProducts(response.data);
       })
@@ -28,7 +28,7 @@ function Products() {
       fetchProducts();
     } else {
       axios
-        .get(`http://localhost:3004/api/products/${id}`)
+        .get(`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products/${id}`)
         .then((response) => {
           setProducts(response.data);
         })
@@ -74,7 +74,7 @@ function Products() {
   const getProductEdit = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:3004/api/product/${id}`
+        `https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/product/${id}`
       );
       setName(response.data[0].Name);
       setDescription(response.data[0].Description);
@@ -94,7 +94,7 @@ function Products() {
 
   function handleFileSubmit(event) {
     event.preventDefault()
-    const url = 'http://localhost:3004/uploads';
+    const url = 'https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads';
     const formData = new FormData();
     formData.append('file', selectedImage);
     formData.append('fileName', selectedImage.name);
@@ -114,7 +114,7 @@ function Products() {
   const ModifyProduct = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:3004/api/products/${id}`,
+        `https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products/${id}`,
         {
           name: name,
           description: description,
@@ -154,7 +154,7 @@ function Products() {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          await axios.delete(`http://localhost:3004/api/products/${id}`);
+          await axios.delete(`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products/${id}`);
           fetchProducts();
         } catch (error) {
           alert("Error: " + error);
@@ -216,7 +216,7 @@ function Products() {
               <td> {p.Price} </td>
               <td>
                 <img
-                  src={`http://localhost:3004/uploads/` + p.Image}
+                  src={`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads/` + p.Image}
                   alt={p.Image}
                   width="100"
                   height="100"
@@ -313,7 +313,7 @@ function Products() {
 
             <div>
               <img
-                src={`http://localhost:3004/uploads/` + image}
+                src={`https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads/` + image}
                 alt="Uploaded Preview"
                 style={{ maxWidth: "100%" }}
               />

@@ -23,7 +23,7 @@ function RegisterUser({ onRegisterdedUser }) {
 
   const registereUser = async () => {
     try {
-      const response = await axios.post("http://localhost:3004/api/user/", {
+      const response = await axios.post("https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/user/", {
         name: name, // get name and assign to key
         email: email, // get email and assign to key
         password: password, // get password and assign to key

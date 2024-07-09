@@ -29,7 +29,7 @@ function AddProduct({ onCreatedProduct }) {
     };
     function handleFileSubmit(event) {
       event.preventDefault()
-      const url = 'http://localhost:3004/uploads';
+      const url = 'https://saidmohammed-app-5edbe9f026ce.herokuapp.com/uploads';
       const formData = new FormData();
       formData.append('file', selectedImage);
       formData.append('fileName', selectedImage.name);
@@ -48,7 +48,7 @@ function AddProduct({ onCreatedProduct }) {
   
     const createProduct = async () => {
       try {
-        const response = await axios.post("http://localhost:3004/api/products", {
+        const response = await axios.post("https://saidmohammed-app-5edbe9f026ce.herokuapp.com/api/products", {
          name: name,
          description: description,
          price: price,

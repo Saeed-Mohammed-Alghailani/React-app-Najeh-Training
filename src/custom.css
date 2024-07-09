@@ -83,7 +83,7 @@ background-color: #CDD7D6 ;
 .outerdiv{
   display: flex;
   flex-wrap: wrap;
-  height: 600px;
+  height: auto;
   align-items: center;
   justify-content: center;
 }
